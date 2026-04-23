@@ -1,3 +1,4 @@
+import { Spinner } from "@/components/ui/spinner"
 import { useEffect, useState } from 'react';
 
 import { tarefasMockadas } from '../data/tarefas';
@@ -16,7 +17,7 @@ export default function Home() {
         <main className="flex flex-col justify-center items-center h-screen
 p-2">
             <h1 className="font-bold pb-2">Minhas Tarefas</h1>
-            {carregando ? <p>Carregando...</p> : (
+            {carregando ? <Spinner /> : (
                 <ul>
                     {tarefas.map(tarefa =>
                         <li
